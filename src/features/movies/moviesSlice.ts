@@ -30,7 +30,7 @@ const moviesSlice = createSlice({
     sortMovies: (state, action: PayloadAction<'name' | 'rating' | 'genre'>) => {
       state.sortBy = action.payload;
       state.movies.sort((a, b) => {
-        if (action.payload === 'rating') return a.rating - b.rating;
+        if (action.payload === 'rating') return b.rating - a.rating ;
         return a[action.payload].localeCompare(b[action.payload]);
       });
     },
